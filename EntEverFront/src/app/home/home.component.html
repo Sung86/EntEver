@@ -72,7 +72,9 @@
        <div class="home-channel">
             <div class="video-title">
                 <span class="video-span">Most Match</span>
-                <button mat-button color="warn">More</button>
+                <button mat-button color="warn" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                    More
+                </button>
             </div>
             
             <div class="video-arrangement">
@@ -80,14 +82,22 @@
                 <app-video></app-video>
                 <app-video></app-video>
                 <app-video></app-video>
-                <app-video></app-video>
-                <app-video></app-video>
+            </div>
+            <div class="collapse" id="collapseExample">
+                <div class="video-arrangement">
+                    <app-video></app-video>
+                    <app-video></app-video>
+                    <app-video></app-video>
+                    <app-video></app-video>
+                </div>
             </div>
         </div>
         <div class="home-channel">
             <div class="video-title">
                 <span class="video-span">Most Watch</span>
-                <button mat-button color="warn">More</button>
+                <button mat-button color="warn" type="button" data-toggle="collapse" data-target="#collapseExample1" aria-expanded="false" aria-controls="collapseExample1">
+                    More
+                </button>
             </div>
             
             <div class="video-arrangement">
@@ -95,8 +105,14 @@
                 <app-video></app-video>
                 <app-video></app-video>
                 <app-video></app-video>
-                <app-video></app-video>
-                <app-video></app-video>
+            </div>
+            <div class="collapse" id="collapseExample1">
+                <div class="video-arrangement">
+                    <app-video></app-video>
+                    <app-video></app-video>
+                    <app-video></app-video>
+                    <app-video></app-video>
+                </div>
             </div>
         </div>
         <div class="row">
