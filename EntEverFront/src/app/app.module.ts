@@ -9,6 +9,7 @@ import { DiscussionComponent } from './discussion/discussion.component';
 import { HeaderComponent } from './frame/header/header.component';
 import { RouterModule } from '@angular/router';
 import { HomeMaterialModule } from './home/homematerial.module';
+import { VideoComponent } from './home/videocomponents/video.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { HomeMaterialModule } from './home/homematerial.module';
     HomeComponent,
     OverviewComponent,
     DiscussionComponent,
-    HeaderComponent
+    HeaderComponent,
+    VideoComponent
   ],
   imports: [
     BrowserModule,

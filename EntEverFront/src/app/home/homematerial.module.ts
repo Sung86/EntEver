@@ -4,7 +4,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
-    imports: [MatButtonModule,MatDividerModule],
-    exports: [MatButtonModule,MatDividerModule]
+    imports: [MatButtonModule,MatDividerModule,MatCardModule],
+    exports: [MatButtonModule,MatDividerModule,MatCardModule]
 })
 export class HomeMaterialModule{}
