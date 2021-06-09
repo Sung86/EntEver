@@ -24,6 +24,31 @@
     justify-content: center;
 }
 
+.home-channel {
+    display: flex;
+    flex-direction: column;
+}
+
+.video-arrangement {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.video-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.video-span {
+  display:block;
+  text-align: center;
+  line-height: 30px;
+}
+
 .label-button {
     display: flex;
     flex-direction: row;
