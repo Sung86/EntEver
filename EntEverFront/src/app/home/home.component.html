@@ -72,7 +72,7 @@
        <div class="home-channel">
             <div class="video-title">
                 <span class="video-span">Most Match</span>
-                <button mat-button color="warn" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">More</button>
+                <button mat-button color="warn">More</button>
             </div>
             
             <div class="video-arrangement">
@@ -82,11 +82,6 @@
                 <app-video></app-video>
                 <app-video></app-video>
                 <app-video></app-video>
-            </div>
-            <div class="collapse" id="collapseExample">
-                <div class="card card-body">
-                  Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
-                </div>
             </div>
         </div>
         <div class="home-channel">
@@ -123,15 +118,35 @@
                 </div>
             </div>
             <div class="col-3">
-                Weekly Hot Movie 
+                <div class="list-wrapper">
+                    <app-list></app-list> 
+                </div>
+                    
             </div>
         </div>
         <div class="row">
-            <div class="col-8">
-                Drama
+            <div class="col-9">
+                <div class="home-channel">
+                    <div class="video-title">
+                        <span class="video-span">Drama</span>
+                        <button mat-button color="warn">More</button>
+                    </div>
+                    <div class="video-arrangement">
+                        <app-video></app-video>
+                        <app-video></app-video>
+                        <app-video></app-video>
+                        <app-video></app-video>
+                        <app-video></app-video>
+                        <app-video></app-video>
+                        <app-video></app-video>
+                    </div>
+                </div>
             </div>
-            <div class="col-4">
-                Weekly Hot Drama 
+            <div class="col-3">
+                <div class="list-wrapper">
+                    <app-list></app-list> 
+                </div>
+                    
             </div>
         </div>
     </div>

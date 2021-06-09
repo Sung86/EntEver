@@ -10,6 +10,7 @@ import { HeaderComponent } from './frame/header/header.component';
 import { RouterModule } from '@angular/router';
 import { HomeMaterialModule } from './home/homematerial.module';
 import { VideoComponent } from './home/videocomponents/video.component';
+import { ListComponent } from './home/listcomponents/list.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { VideoComponent } from './home/videocomponents/video.component';
     OverviewComponent,
     DiscussionComponent,
     HeaderComponent,
-    VideoComponent
+    VideoComponent,
+    ListComponent
   ],
   imports: [
     BrowserModule,
