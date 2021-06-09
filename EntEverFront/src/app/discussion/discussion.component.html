@@ -1,1 +1,144 @@
-<p>discussion works!</p>
+<div class="pl-4 pr-3 pt-3">
+  <mat-grid-list cols="12" rowHeight="5rem">
+    <!-- Selected Drama Section-->
+    <mat-grid-tile colspan="7" rowspan="6">
+      <iframe width="100%" height="100%" src="https://www.youtube.com/embed/my4eXuV0MbI" [title]="selectedDrama.title"
+        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; 
+        picture-in-picture" allowfullscreen></iframe>
+    </mat-grid-tile>
+    <!-- Selected Drama Info Section-->
+    <mat-grid-tile colspan="2" rowspan="6">
+      <div class="w-100 h-100 pl-2 pr-1 py-3 d-flex flex-column justify-content-between">
+        <div>
+          <h2>{{selectedDrama.title}}</h2>
+          <p><b>Actors: </b>{{selectedDrama.actors}}</p>
+          <p><b>Category: </b>{{selectedDrama.category}}</p>
+          <p><b>Year: </b>{{selectedDrama.yearPublished}}</p>
+          <p>
+            <span *ngFor="let hashTag of selectedDrama.hashTags" class="text-primary">
+              #{{hashTag}}
+            </span>
+          </p>
+          <div class="d-flex">
+            <mat-icon color="warn">favorite</mat-icon>
+            <p class="text-secondary">{{selectedDrama.likes}}</p>
+          </div>
+        </div>
+        <div class="d-flex flex-column">
+          <button mat-raised-button class="mb-3 w-50 btn-success btn">Play</button>
+          <button mat-raised-button color="primary" class="w-50">Studio</button>
+        </div>
+      </div>
+    </mat-grid-tile>
+    <!-- Drama Series Section-->
+    <mat-grid-tile colspan="3" rowspan="12">
+      <div class="flex-column w-100 h-100 p-2 card shadow-lg" style="overflow: auto;">
+        <div *ngFor="let drama of allDramaSeries" class="h-25 d-flex mb-4">
+          <img height="100%" width="100%" [src]="drama.thumbnailUrl">
+          <div class="p-2 w-75">
+            <p><b>{{drama.title}}</b></p>
+            <p><b>Actors: </b>{{drama.actors}}</p>
+            <span *ngFor="let hashTag of selectedDrama.hashTags" class="text-primary">
+              #{{hashTag}}
+            </span>
+            <div class="d-flex">
+              <mat-icon color="warn">favorite</mat-icon>
+              <p class="text-secondary">{{drama.likes}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </mat-grid-tile>
+    <!-- Pagination for Drama Series -->
+    <mat-grid-tile colspan="9" rowspan="1">
+      <div class="w-100 h-100 pt-3">
+        <ul class="pagination">
+          <li class="page-item">
+            <span mat-fab class="text-dark btn btn-lg">
+              <mat-icon style="transform: scale(2)">arrow_left</mat-icon>
+            </span>
+          </li>
+          <li *ngFor="let drama of allDramaSeries" class="page-item">
+            <button mat-raised-button class="m-1">{{drama.episodeNumber}}</button>
+          </li>
+          <li class="page-item">
+            <span class="text-dark btn btn-lg">
+              <mat-icon style="transform: scale(2)">arrow_right</mat-icon>
+            </span>
+          </li>
+        </ul>
+      </div>
+
+    </mat-grid-tile>
+    <!-- Comments Section -->
+    <mat-grid-tile colspan="9" rowspan="5">
+      <div class="py-2 px-4 w-100 h-100">
+        <div class="d-flex justify-content-between">
+          <!-- Tabs -->
+          <mat-tab-group mat-align-tabs="start" class="position-relative">
+            <!-- All Comments -->
+            <mat-tab label="All Comments ({{allComments.length}})">
+              <div class="py-3 h-75" style="overflow-y: auto;">
+                <div *ngFor="let comment of allComments" class="mb-3">
+                  <div class="d-flex">
+                    <img [src]="comment.profilePictureUrl" width="70rem" height="70rem" class="rounded-circle mr-2" />
+                    <div class="d-flex flex-column">
+                      <span class="d-flex">
+                        <b>{{comment.userName}}</b>
+                        <span class="text-secondary ml-1">{{comment.commentAgo}}</span>
+                      </span>
+                      <p>{{comment.commentMessage}}</p>
+                    </div>
+                  </div>
+                  <mat-divider class="w-75" style="transform: translateX(20%);"></mat-divider>
+                </div>
+              </div>
+            </mat-tab>
+            <!-- My Comments -->
+            <mat-tab label="My Comments ({{myComments.length}})">
+              <div class="py-3 h-75" style="overflow-y: auto;">
+                <div *ngFor="let comment of myComments" class="mb-3">
+                  <div class="d-flex">
+                    <img [src]="comment.profilePictureUrl" width="70rem" height="70rem" class="rounded-circle mr-2" />
+                    <div class="d-flex flex-column">
+                      <span class="d-flex">
+                        <b>{{comment.userName}}</b>
+                        <span class="text-secondary ml-1">{{comment.commentAgo}}</span>
+                      </span>
+                      <p>{{comment.commentMessage}}</p>
+                    </div>
+                  </div>
+                  <mat-divider class="w-75" style="transform: translateX(20%);"></mat-divider>
+                </div>
+              </div>
+            </mat-tab>
+          </mat-tab-group>
+          <!-- Comment Section Tool Bar -->
+          <div class="d-flex justify-content-center position-absolute" style="transform:translate(80%, 0); z-index: 10">
+            <!-- Sort Comments Button -->
+            <span mat-flat-button [matMenuTriggerFor]="menu" class="mx-5 mt-1 w-50 text-secondary btn "
+              style="height:3rem !important; border: none !important">
+              <span>Top Comments</span>
+              <mat-icon class="position-absolute">arrow_drop_down</mat-icon>
+            </span>
+            <!-- Sort Options Menu -->
+            <mat-menu #menu="matMenu">
+              <button mat-menu-item>
+                <span class="text-secondary">Recent Comments</span>
+              </button>
+            </mat-menu>
+            <!-- Search Comments Bar -->
+            <div class="d-flex mb-3 w-100">
+              <input type="text" height="20rem" class="w-auto" placeholder="Search comments, names, dates...">
+              <div class="">
+                <button class="btn btn-outline-success pt-2">
+                  <mat-icon>search</mat-icon>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
