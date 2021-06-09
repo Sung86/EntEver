@@ -7,6 +7,8 @@ import { OverviewComponent } from './overview/overview.component';
 import { DiscussionComponent } from './discussion/discussion.component';
 import { HeaderComponent } from './frame/header/header.component';
 import { RouterModule } from '@angular/router';
+import { SigninComponent } from './signin/signin.component';
+import { SignupComponent } from './signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -14,12 +16,16 @@ import { RouterModule } from '@angular/router';
     HomeComponent,
     OverviewComponent,
     DiscussionComponent,
-    HeaderComponent
+    HeaderComponent,
+    SigninComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot([
       { path:'', component: HomeComponent},
+      { path:'signin', component: SigninComponent},
+      { path:'signup', component: SignupComponent},
       { path:'overview', component: OverviewComponent},
       { path:'discussion', component: DiscussionComponent}
     ])
