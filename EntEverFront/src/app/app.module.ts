@@ -11,6 +11,8 @@ import { RouterModule } from '@angular/router';
 import { HomeMaterialModule } from './home/homematerial.module';
 import { VideoComponent } from './home/videocomponents/video.component';
 import { ListComponent } from './home/listcomponents/list.component';
+import { SigninComponent } from './signin/signin.component';
+import { SignupComponent } from './signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { ListComponent } from './home/listcomponents/list.component';
     DiscussionComponent,
     HeaderComponent,
     VideoComponent,
-    ListComponent
+    ListComponent,
+    SigninComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
@@ -28,6 +32,8 @@ import { ListComponent } from './home/listcomponents/list.component';
     HomeMaterialModule,
     RouterModule.forRoot([
       { path:'', component: HomeComponent},
+      { path:'signin', component: SigninComponent},
+      { path:'signup', component: SignupComponent},
       { path:'overview', component: OverviewComponent},
       { path:'discussion', component: DiscussionComponent}
     ])
