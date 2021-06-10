@@ -1,0 +1,104 @@
+.home__filter {
+    background-color: burlywood;
+}
+
+.homeimage__wrapper {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.home__background {
+    background-image: url('./img/backgroundImg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+}
+
+.home__favor {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+}
+
+.home-channel {
+    display: flex;
+    flex-direction: column;
+}
+
+.video-arrangement {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.video-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.video-span {
+  display:block;
+  text-align: center;
+  line-height: 30px;
+}
+
+.label-button {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    margin-bottom: 5px;
+}
+
+.list-wrapper {
+    margin-top: 58px;
+}
+
+section {
+    display: table;
+  }
+
+.example-label {
+    display: table-cell;
+    font-size: 16px;
+    margin-left: 8px;
+    min-width: 80px;
+  }
+
+  .example-icon {
+    display: table-cell;
+    font-size: 24px;
+    margin-left: 8px;
+    min-width: 80px;
+  }
+  
+  .example-button-row {
+    display: table-cell;
+    width: 620px;
+  }
+  
+  .example-button-row .mat-button-base {
+    margin: 4px 4px 4px 0;
+  }
+  
+  .example-flex-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  .example-button-container {
+    display: flex;
+    justify-content: center;
+    width: 120px;
+  }
+
